@@ -1,0 +1,24 @@
+.slider {
+    display: flex;
+}
+
+.prev {
+    margin-top: 2.5rem;
+    color: black;
+    background-color: rgb(177, 175, 175);
+    cursor: pointer;
+    border-radius: 50%;
+    border:none;
+}
+.next {
+    margin-top: 2.5rem;
+    color: black;
+    background-color: rgb(177, 175, 175);
+    cursor: pointer;
+    border-radius: 50%;
+    border:none;
+}
+
+.all__icons {
+    display: flex;
+}
