@@ -1,3 +1,11 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
+const cssLoader = require("css-loader");
+const babelLoader = require("babel-loader");
+const fileLoader = require("file-loader");
+const urlLoader = require("url-loader");
 module.exports = {
     entry: './src/index.js',
     mode: 'development',

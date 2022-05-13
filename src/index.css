@@ -1,24 +1,38 @@
+* {
+    margin: 0;
+}
+
+button {
+    background: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: .9rem;
+}
+
+button:hover {
+    background: orangered;
+}
+
+button:active {
+    background: #000;
+    color: #fff;
+}
+
+
 .slider {
-    display: flex;
+    border: 2px solid black;
+    width: 384px;
+    height: 100px;
+    margin: 20px auto;
+    overflow: hidden;
 }
 
-.prev {
-    margin-top: 2.5rem;
-    color: black;
-    background-color: rgb(177, 175, 175);
-    cursor: pointer;
-    border-radius: 50%;
-    border:none;
-}
-.next {
-    margin-top: 2.5rem;
-    color: black;
-    background-color: rgb(177, 175, 175);
-    cursor: pointer;
-    border-radius: 50%;
-    border:none;
-}
-
-.all__icons {
+.slider-line {
+    width: 1152px;
+    height: 256px;
     display: flex;
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
 }
