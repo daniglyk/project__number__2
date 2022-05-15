@@ -1,3 +1,6 @@
+import './css/index.css';
+
+
 let offsett = 0;
 const sliderLine = document.querySelector('.slider-line');
 
