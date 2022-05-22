@@ -1,147 +1,26 @@
 * {
-    margin: 0;
+  margin: 0;
 }
-
-button {
-    background: none;
-    border: 1px solid black;
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: .9rem;
-}
-
-button:hover {
-    background: orangered;
-}
-
-button:active {
-    background: #000;
-    color: #fff;
-}
-
 
 .slider {
-    border: 2px solid black;
-    width: 384px;
-    height: 100px;
-    margin: 20px auto;
-    overflow: hidden;
+  border: 2px solid black;
+  width: 384px;
+  height: 100px;
+  margin: 20px auto;
+  overflow: hidden;
 }
 
 .slider-line {
-    width: 1152px;
-    height: 256px;
-    display: flex;
-    position: relative;
-    left: 0;
-    transition: all ease 1s;
+  width: 1152px;
+  height: 256px;
+  display: flex;
+  position: relative;
+  left: 0;
+  transition: all ease 1s;
 }
 
 .slider-prev {
-	margin: 0 0 0 44%;
-	background: orange;
+  margin: 0 0 0 44%;
+  background: orange;
 }
 
-/*calculator*/
-#adding_machine {
-	width: 285px;
-	height: auto;
-	overflow: hidden;
-	margin: 100px auto;
-	padding: 22px 22px 10px;
-	position: relative;
-	background: rgb(47 47 47 / 40%);
-	border-radius: 3px;
-	box-shadow: 0px 9px 10px 0px rgb(27 27 27 / 47%);
-  }
-  
-  .calculating span.clean {
-	position:absolute;
-	z-index:6;
-  }
-  
-  .calculating .calc {
-	height: 42px;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding: 22px 0;
-	background: rgb(19 19 19 / 23%);
-	font-size: 30px;
-	font-weight: normal;
-	line-height: 39px;
-	color: #f7f6f6;
-	text-shadow: 1px 1px 2px rgb(23 22 22 / 29%);
-	text-align: right;
-	letter-spacing: 1px;
-  }
-  
-  .poviden, .calculating {overflow: hidden;}
-  
-  .poviden span, .calculating span.clean {
-	float: left;
-	position: relative;
-	top: 0;
-	cursor: pointer;
-	width: 66px;
-	height: 56px;
-	background: rgb(18 18 18 / 50%);
-	border-radius: 3px;
-	box-shadow: 0px 4px rgb(12 12 12 / 20%);
-	margin: 0 7px 11px 0;
-	color: #bbb5b5;
-	line-height: 56px;
-	text-align: center;
-	user-select: none;
-	transition: all 0.2s ease;
-  }
-  
-  .poviden span.signs {
-	background: rgb(10 125 125 / 64%);
-	margin-right: 0;
-  }
-  
-  .poviden span.amipod {
-	color: #7a8056;
-  }
-  
-  .calculating span.clean {
-	background: rgb(31 31 31 / 0%);
-	box-shadow: none;
-	color: #bdb7b7;
-	width: 60px;
-	left: 5px;
-	line-height: 59px;
-  }
-  
-  .poviden span:hover {
-	background: rgb(230 230 230 / 80%);
-	color: #1f1d1d;
-  }
-  
-  .poviden span.amipod:hover {
-	background: #a6b157;
-	color: #f7f3f3;
-  }
-  
-  .calculating span.clean:hover {
-	border-radius: 190px;
-	background: rgb(27 26 26 / 10%);
-	color: #f9f5f5;
-  }
-  
-  .poviden span:active {
-	box-shadow: 0px 0px rgba(0, 0, 0, 0.2);
-	top: 4px;
-  }
-  
-  .poviden span.amipod:active {
-	box-shadow: 0px 0px #717a33;
-	top: 4px;
-  }
-  
-  .calculating span.clean:active {
-	top: 4px;
-	box-shadow: 0px 0px #d3545d;
-  }

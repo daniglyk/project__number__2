@@ -27,29 +27,42 @@
     </div>    
 <!-- calculator -->
 
-<div id="adding_machine">
-    <div class="calculating">
-    <span class="clean">C</span>
-    <div class="calc"></div>
+<div class="calculator__body">
+    <form action="">
+      <input type="text" readonly class="help-input" value="" id="helpInput">
+    </form>
+    <div class="colculator__line line first-line">
+      <input type="text" class="input" id="main-input" value="" readonly>
+      <div class="line__item  decor" id="delete"></div>
     </div>
-     
-    <div class="poviden">
-    <span>7</span>
-    <span>8</span>
-    <span>9</span>
-    <span class="signs">+</span>
-    <span>4</span>
-    <span>5</span>
-    <span>6</span>
-    <span class="signs">-</span>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
-    <span class="signs">÷</span>
-    <span>0</span>
-    <span>.</span>
-    <span class="amipod">=</span>
-    <span class="signs">x</span>
+    <div class="colculator__content" id="calculator-content">
+      <div class="colculator__line line">
+        <button class="line__item" value="7">7</button>
+        <button class="line__item" value="8">8</button>
+        <button class="line__item" value="9">9</button>
+        <button class="line__item" value="*" id="multiply">x</button>
+      </div>
+      <div class="colculator__line line">
+        <button class="line__item" value="4">4</button>
+        <button class="line__item" value="5">5</button>
+        <button class="line__item" value="6">6</button>
+        <button class="line__item" value="/" id="divide">÷</button>
+      </div>
+      <div class="colculator__line line">
+        <button class="line__item" value="1">1</button>
+        <button class="line__item" value="2">2</button>
+        <button class="line__item" value="3">3</button>
+        <button class="line__item" value="+" id="sum">+</button>
+      </div>
+      <div class="colculator__line line">
+        <button class="line__item" value="0">0</button>
+        <button class="line__item" id="result">=</button>
+        <button class="line__item" value="." id="point">.</button>
+        <button class="line__item" value="-" id="minus">-</button>
+      </div>
+      <div class="colculator__line line">
+        <button class="line__item" id="clear">C</button>
+      </div>
     </div>
   </div>
 </body>
