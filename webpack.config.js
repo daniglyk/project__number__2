@@ -5,6 +5,7 @@ const path = require("path");
 const fileLoader = require("file-loader");
 const urlLoader = require("url-loader");
 const htmlLoader = require("html-loader");
+const sassLoader = require("sass-loader");
 const isDev = process.env.NODE_ENV === "development";
 const isProd = !isDev;
 const filename = (ext) =>
@@ -16,7 +17,7 @@ module.exports = {
   entry: "./index.js",
   output: { path: path.resolve(__dirname, "dist"), filename: "main.js" },
   devServer: {
-    port: 3876,
+    port: 3881,
     open: true,
   },
   plugins: [

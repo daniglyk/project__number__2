@@ -19,8 +19,12 @@
   transition: all ease 1s;
 }
 
+.slider__buttons {
+  display: flex;
+ justify-content: center;
+}
+
 .slider-prev {
-  margin: 0 0 0 44%;
   background: orange;
 }
 
