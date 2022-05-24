@@ -17,7 +17,7 @@ module.exports = {
   entry: "./index.js",
   output: { path: path.resolve(__dirname, "dist"), filename: "main.js" },
   devServer: {
-    port: 3881,
+    port: 3841,
     open: true,
   },
   plugins: [

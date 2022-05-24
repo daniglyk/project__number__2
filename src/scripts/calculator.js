@@ -1,9 +1,10 @@
 const calculatorContent = document.querySelector("#calculator-content");
 const mainInput = document.querySelector("#main-input");
 const point = document.querySelector("#point");
-const helpInput = document.querySelector("#helpInput");
+const helpInput = document.querySelector("#help-input");
 const resultBtn = document.querySelector("#result");
 const clear = document.querySelector("#clear");
+const clearLast = document.querySelector("#clear__last");
 const deleteLastSymbol = document.querySelector("#delete");
 let isOn = true;
 
@@ -55,18 +56,20 @@ const result = () => {
 };
 resultBtn.addEventListener("click", result);
 
+
 clear.addEventListener("click", () => {
   mainInput.value = "";
   helpInput.value = "";
   point.value = ".";
 });
 
-const del = () => {
-  mainInput.value = mainInput.value.substr(0, mainInput.value.length - 1);
-};
-deleteLastSymbol.addEventListener("click", del);
+clearLast.addEventListener("click", () => {
+  mainInput.value = "";
+});
+
 
 document.addEventListener("keydown", (event) => {
+  console.log(event)
   const values = [
     "1",
     "2",
@@ -87,6 +90,17 @@ document.addEventListener("keydown", (event) => {
   if (isOn) {
      if (values.includes(event.key) && isOn === true) {
       inputKey(event.key);
+    }
+    if (event.key === 'Enter') {
+      result();
+    }
+    if (event.key === "Backspace") {
+      mainInput.value = "";
+      helpInput.value = "";
+      point.value = ".";
+    }
+    if (event.key === "Escape") {
+      mainInput.value = "";
     }
   }
 });

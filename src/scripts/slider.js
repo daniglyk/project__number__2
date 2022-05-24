@@ -1,7 +1,7 @@
 let offsett = 0;
 const sliderLine = document.querySelector('.slider-line');
-var btnNext = document.querySelector('.slider-next');
-var btnPrev = document.querySelector('.slider-prev');
+const btnNext = document.querySelector('.slider-next');
+const btnPrev = document.querySelector('.slider-prev');
 
 btnNext.addEventListener('click', function(){
     offsett = offsett + 256;

@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-    
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+  <head>
+    <meta charset="UTF-8" />
 
-<body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
     <div class="container">
-        <div class="slider">
-            <div class="slider-line">
-                <img src="./images/burger.png" alt="" width="128px" height="100px">
-                <img src="./images/greel.png" alt="" width="128px" height="100px">
-                <img src="./images/ice.png" alt="" width="128px" height="100px">
-                <img src="./images/meet.png" alt="" width="128px" height="100px">
-                <img src="./images/pizza.png" alt="" width="128px" height="100px">
-                <img src="./images/roll.png" alt="" width="128px" height="100px">
-                <img src="./images/eat.png" alt="" width="128px" height="100px">
-                <img src="./images/hand.png" alt="" width="128px" height="100px">
-                <img src="./images/hot.png" alt="" width="128px" height="100px">
-            </div>
+      <div class="slider">
+        <div class="slider-line">
+          <img src="./images/burger.png" alt="" width="128px" height="100px" />
+          <img src="./images/greel.png" alt="" width="128px" height="100px" />
+          <img src="./images/ice.png" alt="" width="128px" height="100px" />
+          <img src="./images/meet.png" alt="" width="128px" height="100px" />
+          <img src="./images/pizza.png" alt="" width="128px" height="100px" />
+          <img src="./images/roll.png" alt="" width="128px" height="100px" />
+          <img src="./images/eat.png" alt="" width="128px" height="100px" />
+          <img src="./images/hand.png" alt="" width="128px" height="100px" />
+          <img src="./images/hot.png" alt="" width="128px" height="100px" />
         </div>
-        <div class="slider__buttons">
-        <button class="slider-prev">Prev</button>
-        <button class="slider-next">Next</button>
-        </div>
-    </div>    
-<!-- calculator -->
+      </div>
+      <div class="slider__buttons">
+        <button class="slider-prev scroll">Prev</button>
+        <button class="slider-next scroll">Next</button>
+      </div>
+    </div>
+    <!-- calculator -->
 
-<div class="calculator__body">
-    <form action="">
-      <input type="text" readonly class="help-input" value="" id="helpInput">
-    </form>
-    <div class="colculator__line line first-line">
-      <input type="text" class="input" id="main-input" value="" readonly>
-      <div class="line__item  decor" id="delete"></div>
+    <div class="calculator__body">
+      
+        
+      <form class="calculator__line">
+        <input type="text" class="help-input" id="help-input" value="" readonly />
+        <input type="text" class="input" id="main-input" value="" readonly />
+      </form>
+      <div class="calculator__content" id="calculator-content">
+        
+          <button class="line__item" value="7">7</button>
+          <button class="line__item" value="8">8</button>
+          <button class="line__item" value="9">9</button>
+          <button class="line__item math-operator" value="*" id="multiply">x</button>
+        
+        
+          <button class="line__item" value="4">4</button>
+          <button class="line__item" value="5">5</button>
+          <button class="line__item" value="6">6</button>
+          <button class="line__item math-operator" value="/" id="divide">÷</button>
+        
+        
+          <button class="line__item" value="1">1</button>
+          <button class="line__item" value="2">2</button>
+          <button class="line__item" value="3">3</button>
+          <button class="line__item math-operator" value="+" id="sum">+</button>
+       
+        
+          <button class="line__item" value="0">0</button>
+          <button class="line__item" id="result">=</button>
+          <button class="line__item" value="." id="point">.</button>
+          <button class="line__item math-operator" value="-" id="minus">-</button>
+        
+        
+          <button class="line__item math-operator" id="clear">AC</button>
+          <button class="line__item math-operator" id="clear__last">C</button>
+        
+      </div>
     </div>
-    <div class="colculator__content" id="calculator-content">
-      <div class="colculator__line line">
-        <button class="line__item" value="7">7</button>
-        <button class="line__item" value="8">8</button>
-        <button class="line__item" value="9">9</button>
-        <button class="line__item" value="*" id="multiply">x</button>
-      </div>
-      <div class="colculator__line line">
-        <button class="line__item" value="4">4</button>
-        <button class="line__item" value="5">5</button>
-        <button class="line__item" value="6">6</button>
-        <button class="line__item" value="/" id="divide">÷</button>
-      </div>
-      <div class="colculator__line line">
-        <button class="line__item" value="1">1</button>
-        <button class="line__item" value="2">2</button>
-        <button class="line__item" value="3">3</button>
-        <button class="line__item" value="+" id="sum">+</button>
-      </div>
-      <div class="colculator__line line">
-        <button class="line__item" value="0">0</button>
-        <button class="line__item" id="result">=</button>
-        <button class="line__item" value="." id="point">.</button>
-        <button class="line__item" value="-" id="minus">-</button>
-      </div>
-      <div class="colculator__line line">
-        <button class="line__item" id="clear">C</button>
-      </div>
-    </div>
-  </div>
-</body>
+  </body>
 </html>

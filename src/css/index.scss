@@ -21,16 +21,10 @@
 
 .slider__buttons {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+ justify-content: center;
 }
 
 .slider-prev {
   background: orange;
 }
 
-.scroll {
-    font-size: 1.875rem;
-    font-weight: normal;
-    line-height: 2.43rem;
-}
