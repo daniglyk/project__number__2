@@ -100,7 +100,7 @@ document.addEventListener("keydown", (event) => {
      if (values.includes(event.key) && isOn === true) {
       inputKey(event.key);
     }
-    if (event.key === 'Enter') {
+    if (event.key === "Enter") {
       result();
     }
     if (event.key === "Backspace") {
