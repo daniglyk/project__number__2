@@ -22,3 +22,10 @@
           transition: all 0.3s ease 0s;
 }
 
+@mixin input-pomodoro {
+    font-size: 1rem;
+    background-color: $darkBlue;
+    border-radius: 0.7rem;
+    border-color: black;
+    width: 40%;
+}

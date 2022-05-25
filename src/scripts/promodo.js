@@ -4,11 +4,18 @@ const resetBtn = document.querySelector("#resetBtn");
 const time = document.querySelector(".time");
 const timerContent = document.querySelector(".timer__content");
 const timeTo = document.querySelector(".time-to");
-// const audio = document.querySelector("#audio");
+const settings = document.querySelector(".btn-settings");
+const pomodoro = document.querySelector("#pomodoro");
+const short = document.querySelector("#short");
 let workTime;
 let breakTime;
-let timeToWork = 5;
-let timeToBreak = 5;
+let timeToWork = 900;
+let timeToBreak = 300;
+
+settings.addEventListener("click", () => {
+   timeToWork = +pomodoro.value * 60;
+   timeToBreak = +short.value * 60;
+});
 
 function startWorkTime() {
   let minutes = Math.floor(timeToWork / 60);
@@ -43,7 +50,7 @@ function startBreakTime() {
 }
 
 startBtn.addEventListener("click", () => {
-	// audio.play();
+	audio.play();
 	if (timeTo.innerHTML === "Pomodoro") {
 		workTime = setInterval(startWorkTime, 1000);
 	}
@@ -64,6 +71,3 @@ resetBtn.addEventListener("click", () => {
 });
 
 
-settings.addEventListener("click", () => {
-    settingsMenu.style.display = "flex";
-  });
