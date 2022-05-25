@@ -7,7 +7,15 @@ const clear = document.querySelector("#clear");
 const clearLast = document.querySelector("#clear__last");
 const deleteLastSymbol = document.querySelector("#delete");
 let isOn = true;
-
+const evalFunc = () => {
+  mainInput.value = eval(mainInput.value)
+  if (mainInput.value.indexOf('.') !== -1) {
+    mainInput.value = eval(mainInput.value).toFixed(5)
+      while (mainInput.value[mainInput.value.length - 1] === '0') {
+        mainInput.value = mainInput.value.slice(0, -1);
+      }
+  }
+}
 
 const inputKey = (key) => {
   mainInput.value = mainInput.value + key;
@@ -51,6 +59,7 @@ const result = () => {
   if (exp) {
     exp = exp.replace("--", "+");
     mainInput.value = eval(exp);
+    evalFunc();
   }
   helpInput.value = "";
 };

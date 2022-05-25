@@ -11,3 +11,18 @@
             text-align: right;
             letter-spacing: 1px;
 }
+
+@mixin button-promodo {
+          flex: 0 1 33.333%;
+          margin: 0 3rem 0 0;
+          padding: 0.3rem;
+          font-size: 2rem;
+          background-color: $darkBlue;
+          border-radius: 0.7rem;
+          transition: all 0.3s ease 0s;
+}
+
+@mixin input-promodo {
+    background-color: $darkBlue;
+    width: 13%;
+}
