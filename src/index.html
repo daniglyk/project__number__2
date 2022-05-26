@@ -1,42 +1,124 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="src/index.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="src/index.js"></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
 
-<body>
-<div class="slider">
-   <div class="buttons">
-       <button class="prev"><</button>
-   </div>
-   <div class="all__icons">
-    <div class="slider__icons">
-       <img class="icons" src="./src/icons/burger.png" width="100px" height="100px">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="slider">
+        <div class="slider-line">
+          <img src="./images/burger.png" alt="" width="128px" height="100px" />
+          <img src="./images/greel.png" alt="" width="128px" height="100px" />
+          <img src="./images/ice.png" alt="" width="128px" height="100px" />
+          <img src="./images/meet.png" alt="" width="128px" height="100px" />
+          <img src="./images/pizza.png" alt="" width="128px" height="100px" />
+          <img src="./images/roll.png" alt="" width="128px" height="100px" />
+          <img src="./images/eat.png" alt="" width="128px" height="100px" />
+          <img src="./images/hand.png" alt="" width="128px" height="100px" />
+          <img src="./images/hot.png" alt="" width="128px" height="100px" />
         </div>
-        <div class="slider__icons">
-       <img class="icons" src="./src/icons/greel.png" width="100px" height="100px">
+      </div>
+      <div class="slider__buttons">
+        <button class="slider-prev scroll">Prev</button>
+        <button class="slider-next scroll">Next</button>
+      </div>
+    </div>
+    <!-- calculator -->
+
+    <div class="calculator__body">
+      
+        
+      <form class="calculator__line">
+        <input type="text" class="help-input" id="help-input" value="" readonly />
+        <input type="text" class="input" id="main-input" value="" readonly />
+      </form>
+      <div class="calculator__content" id="calculator-content">
+        
+          <button class="line__item" value="7">7</button>
+          <button class="line__item" value="8">8</button>
+          <button class="line__item" value="9">9</button>
+          <button class="line__item math-operator" value="*" id="multiply">x</button>
+        
+        
+          <button class="line__item" value="4">4</button>
+          <button class="line__item" value="5">5</button>
+          <button class="line__item" value="6">6</button>
+          <button class="line__item math-operator" value="/" id="divide">÷</button>
+        
+        
+          <button class="line__item" value="1">1</button>
+          <button class="line__item" value="2">2</button>
+          <button class="line__item" value="3">3</button>
+          <button class="line__item math-operator" value="+" id="sum">+</button>
+       
+        
+          <button class="line__item" value="0">0</button>
+          <button class="line__item" id="result">=</button>
+          <button class="line__item" value="." id="point">.</button>
+          <button class="line__item math-operator" value="-" id="minus">-</button>
+        
+        
+          <button class="line__item math-operator" id="clear">AC</button>
+          <button class="line__item math-operator" id="clear__last">C</button>
+          </div>
+          </div>
+        
+
+          <!-- promodo -->
+          
+          <div class="timer__content">
+            <div class="time-to">Pomodoro</div>
+            <div class="timer__time">
+              <div class="time__column">
+                <div class="time"></div>
+              </div>
+            </div>
+            <div class="content__buttons">
+              <button class="content__button" id="startBtn">Start</button>
+              <button class="content__button" id="pauseBtn">Stop</button>
+              <button class="content__button" id="resetBtn">Reset</button>
+            </div>
+          <audio id="audio">
+            <source src="./audio/promodo.mp3" type="audio/mpeg">
+            </source>
+          </audio>
+          <button class="btn-settings">Your time</button>
+            <div class="settings">
+              <label for="pomodoro">
+                  Pomodoro
+                  <input type="number" min="1" step="1" id="pomodoro" value="15">
+              </label>
+              <label for="short">
+                  Short break
+                  <input type="number" min="1" step="1" id="short" value="5">
+              </label>
+          </div>
+
+
+          </div>
+      </div>
+    </div>  
+      <!-- labirint -->
+
+
+      <div class="labyrint">
+        <div class="labyrint__settings">
+            <label>Height
+                <input type="number" id="height">
+            </label>
+            <label>Width
+                <input type="number" id="width">
+            </label>
+            <button class="btn__start">Start</button>
+            <button class="btn__reset">Reset</button>
         </div>
-        <div class="slider__icons">
-       <img class="icons" src="./src/icons/meet.png" width="100px" height="100px">
-        </div>
-        <div class="slider__icons">
-       <img class="icons" src="./src/icons/ice.png" width="100px" height="100px">
-        </div>
-        <div class="slider__icons">
-       <img class="icons" src="./src/icons/roll.png" width="100px" height="100px">
-        </div>
-        <div class="slider__icons">
-       <img class="icons" src="./src/icons/pizza.png" width="100px" height="100px">
+        <div class="labyrint__box" tabindex="0">
         </div>
     </div>
-   <div class="buttons">
-       <button class="next">></button>
-   </div>
-</div>
-<script src="src/index.js"></script>
-</body>
+    
+  </body>
 </html>

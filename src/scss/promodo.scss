@@ -1,0 +1,61 @@
+
+  @import '../assets/styles/mixins.scss';
+  
+  $blue: rgba(255, 99, 71, 0.8);
+  $darkBlue: rgba(255, 99, 71, 1);
+  
+  .timer__content {
+      max-width: 50rem;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: $blue;
+      border-radius: 1rem;
+      transition: all 0.3s ease 0s;
+          .time-to {
+                font-size: 6rem;
+                text-transform: uppercase;
+                letter-spacing: 0.125rem;
+                text-align: center;
+          }
+      .timer__time {
+        display: flex;
+        justify-content: center;		
+        margin: 0 0 1.5rem 0;
+        .time__column {
+                  display: flex;
+                  flex-direction: column;
+                  margin: 0 1rem 0 0;
+                  .time {
+                      font-size: 3rem;
+                  }
+        }
+      }
+      .content__buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        .content__button {
+          @include button-promodo;
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+      .btn-settings {
+        @include button-promodo;
+        font-size: 1rem;
+        margin-top: 1rem;
+        margin-left: 45%;
+      }
+      .settings {
+        display: flex;
+        justify-content: center;
+        input {
+          @include input-pomodoro;
+        }
+      }
+    }
+      
+
+     
+
+  
