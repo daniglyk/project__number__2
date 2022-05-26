@@ -9,8 +9,8 @@ const pomodoro = document.querySelector("#pomodoro");
 const short = document.querySelector("#short");
 let workTime;
 let breakTime;
-let timeToWork = 5;
-let timeToBreak = 5;
+let timeToWork = 900;
+let timeToBreak = 300;
 let isWorkTime = true;
 
 settings.addEventListener("click", () => {
@@ -81,8 +81,8 @@ pauseBtn.addEventListener("click", () => {
 });
 
 resetBtn.addEventListener("click", () => {
-   timeToWork = 5;
-   timeToBreak = 5;
+   timeToWork = 900;
+   timeToBreak = 300;
    pomodoro.value = 15;
    short.value = 5;
    clearInterval(workTime);

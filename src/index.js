@@ -4,3 +4,5 @@ import './scripts/calculator';
 import './scripts/slider';
 import './scripts/promodo';
 import './scss/promodo.scss';
+import './scss/labirint.scss';
+import './scripts/labirint';
