@@ -1,34 +1,32 @@
-.labyrint__settings {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-.labyrint {
+
+  .labyrint__field {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 4rem;
-}
-.labyrint__box {
-    margin: 50px auto;
-    display: grid;
-    grid-auto-rows: 100px;
-    &__item {
-        border: 1px solid black;
-        position: relative;
-        &.black {
-            background-color: black;
-        }
-        &.start::before {
-            background: red;
-        }
-        &.finish::before {
-            background: black;
-        }
+    margin-bottom: 4rem;
+    .height__width {
+      display: grid;
+      grid-Template-Columns: repeat(2, 1fr);
+      gap: 1rem;
     }
-}
-// @media (max-width: 768px) {
-//     .labyrinth-content{
-//         display: none;
-//     }
-// }
+    .labyrint {
+      margin-bottom: 4rem;
+      display: grid;
+      grid-auto-rows: 130px;
+      &__block {
+          border: 1px solid black;
+          position: relative;
+          width: 130px;
+          &.fire {
+            content: url(../images/Fire.png);
+          }
+          &.smile::before {
+              content: url(../images/smile.png);
+          }
+          &.finish::before {
+              content: url(../images/finish.png);
+          }
+      }
+    }
+  }
