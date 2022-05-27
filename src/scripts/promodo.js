@@ -81,8 +81,8 @@ pauseBtn.addEventListener("click", () => {
 });
 
 resetBtn.addEventListener("click", () => {
-   timeToWork = 5;
-   timeToBreak = 5;
+   timeToWork = 900;
+   timeToBreak = 300;
    pomodoro.value = 15;
    short.value = 5;
    clearInterval(workTime);

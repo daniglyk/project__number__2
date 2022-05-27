@@ -1,0 +1,172 @@
+const labyrintField = document.querySelector('.labyrint__field');
+const labyrint = document.querySelector('.labyrint');
+const labyrintHeight = document.querySelector('#height');
+const labyrintWidth = document.querySelector('#width');
+const start = document.querySelector('.start');
+const restart = document.querySelector('.restart');
+const fireBlocks = [];
+let Play = false;
+let labyrintIcon;
+let x;
+let y;
+// in case of defeat 
+const isDefeat = () => {
+    alert('Defeat')
+    fireBlocks.length = 0
+    defeat(labyrintIcon)
+    labyrintIcon[+labyrintHeight.value - 1].classList.add('smile')
+    threat()
+    return
+}
+// firstly position of smile & fire
+const game = (icon) => {
+    for (const elem of icon) {
+        if (elem.dataset.y === '1' && 
+        elem.dataset.x === labyrintHeight.value) {
+            elem.classList.add('smile')
+        }
+        if (elem.dataset.y === labyrintWidth.value && 
+            elem.dataset.x === labyrintHeight.value) {
+            elem.classList.add('finish')
+        }
+    }
+}
+// creating field
+const createField = (i) => {
+    labyrint.style.gridTemplateColumns = `repeat(${labyrintHeight.value}, 130px)`
+    const div = document.createElement('div');
+    div.classList.add('labyrint__block');
+    labyrint.appendChild(div)
+}
+// generate random place of fire blocks
+const randomizer = (min, max, smileElement) => {
+    let randing = min - 0.5 + Math.random() * (max - min + 1);
+    if (fireBlocks.indexOf(Math.round(randing)) !== -1) {
+        return randomizer(min, max, smileElement)
+    } else {
+        fireBlocks.push(Math.round(randing))
+    }
+    if (Math.round(randing) === smileElement) {
+        return randomizer(min, max, smileElement)
+    } else {
+        return Math.round(randing);
+    }
+}
+// generating of fires blocks
+const threat = () => {
+    const allField = +labyrintHeight.value * +labyrintWidth.value;
+    const amountOfFires = randomizer(0, allField - 2, +labyrintHeight.value - 1)
+    labyrintIcon[amountOfFires].classList.add('fire')
+}
+// coordinate of field
+const coordinating = (icon) => {
+    let axisX = 1;
+    let axisY = 1;
+    for (let elem of icon) {
+        if (axisX > +labyrintHeight.value) {
+            axisX = 1
+            axisY++
+        }
+        elem.setAttribute('data-x', `${axisX}`);
+        elem.setAttribute('data-y', `${1 * axisY}`);
+        axisX++
+    }
+}
+// in case of victory
+const finish = (icon) => {
+    for (const elem of icon) {
+        if (elem.classList.contains('smile') && 
+        elem.classList.contains('finish')) {
+            alert('Victory')
+            for (const elem of labyrintIcon) {
+                elem.classList.remove('smile')
+                elem.classList.remove('finish')
+            }
+            game(labyrintIcon)
+            threat()
+        }
+    }
+}
+// in case of defeat
+const defeat = (icon) => {
+    for (const elem of icon) {
+        elem.classList.remove('fire')
+        elem.classList.remove('smile')
+    }
+}
+// mooving of smiles icon
+const traffic = (x, y, move, smilesElement, icon, key) => {
+    x = icon[smilesElement].dataset.x
+    y = icon[smilesElement].dataset.y
+    if ((x < 2 && key === 'ArrowLeft') || 
+    (x > +labyrintHeight.value - 1 && key === 'ArrowRight') || 
+    (y < 2 && key === 'ArrowUp') || 
+    (y > +labyrintWidth.value - 1 && key === 'ArrowDown')) {
+        isDefeat()
+    }
+    icon[smilesElement].classList.remove('smile');
+    smilesElement += move;
+    if (icon[smilesElement].classList.contains('fire')) {
+        isDefeat()
+    } else {
+        icon[smilesElement].classList.add('smile');
+    }
+};
+// button start
+const PlayFunc = Play => Play ? start.setAttribute('disabled', 'true') : start.removeAttribute('disabled')
+start.addEventListener('click', () => {
+    Play = true
+    PlayFunc(Play)
+    const allField = +labyrintHeight.value * +labyrintWidth.value;
+    for (let i = 1; i <= allField; i++) {
+        createField(i)
+    }
+    labyrintIcon = labyrintField.querySelectorAll('.labyrint__block ');
+    coordinating(labyrintIcon)
+    game(labyrintIcon)
+    threat()
+})
+// button restart
+restart.addEventListener('click', () => {
+    Play = false
+    PlayFunc(Play)
+    while (labyrint.childElementCount !== 0) {
+        labyrint.removeChild(labyrint.lastElementChild)
+    }
+    fireBlocks.length = 0
+})
+// keyboard
+labyrint.addEventListener('keydown', e => {
+    let smilesElement;
+    for (let i = 0; i < labyrintIcon.length; i++) {
+        if (labyrintIcon[i].classList.contains('smile')) {
+            smilesElement = i
+        }
+    }
+    switch (e.key) {
+        case 'ArrowLeft':
+            e.preventDefault()
+            traffic(x, y, -1, smilesElement, labyrintIcon, 'ArrowLeft')
+            finish(labyrintIcon)
+            break;
+        case 'ArrowDown':
+            e.preventDefault()
+            traffic(x, y, +labyrintHeight.value, smilesElement, labyrintIcon, 'ArrowDown')
+            finish(labyrintIcon)
+            break;
+        case 'ArrowRight':
+            e.preventDefault()
+            traffic(x, y, 1, smilesElement, labyrintIcon, 'ArrowRight')
+            finish(labyrintIcon)
+            break;
+        case 'ArrowUp':
+            e.preventDefault()
+            traffic(x, y, -+labyrintHeight.value, smilesElement, labyrintIcon, 'ArrowUp')
+            finish(labyrintIcon)
+            break;
+    }
+})
+
+
+
+
