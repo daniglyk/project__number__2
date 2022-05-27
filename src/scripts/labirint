@@ -18,7 +18,7 @@ const isDefeat = () => {
     threat()
     return
 }
-// firstly position of smile & fire
+// firstly position of smile & finish
 const game = (icon) => {
     for (const elem of icon) {
         if (elem.dataset.y === '1' && 
@@ -32,7 +32,7 @@ const game = (icon) => {
     }
 }
 // creating field
-const createField = (i) => {
+const createField = () => {
     labyrint.style.gridTemplateColumns = `repeat(${labyrintHeight.value}, 130px)`
     const div = document.createElement('div');
     div.classList.add('labyrint__block');
@@ -41,7 +41,7 @@ const createField = (i) => {
 // generate random place of fire blocks
 const randomizer = (min, max, smileElement) => {
     let randing = min - 0.5 + Math.random() * (max - min + 1);
-    if (fireBlocks.indexOf(Math.round(randing)) !== -1) {
+    if (fireBlocks.includes(Math.round(randing))) {
         return randomizer(min, max, smileElement)
     } else {
         fireBlocks.push(Math.round(randing))
